@@ -1,0 +1,7 @@
+---
+# tasks file for build-configlets
+- name: 'Build Endpoint Configlets'
+  template:
+    src: "template.ep.j2"
+    dest: ./generated_vars/devices/{{ inventory_hostname }}.txt
+  delegate_to: localhost

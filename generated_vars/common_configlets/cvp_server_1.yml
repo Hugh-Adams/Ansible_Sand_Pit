@@ -1,0 +1,26 @@
+---
+'shared_LoginBanner':
+   config: "! banner login ! ******************************************************************************** LEGAL NOTICE\nYOU MAY COMMIT A CRIMINAL OFFENCE IF YOU ACT OUTSIDE YOUR AUTHORITY IN RELATION TO THIS EQUIPMENT. THE PENALTY WILL INCLUDE DISCIPLINARY ACTION, DISMISSAL, FINES, OR PROSECUTION. IF YOU ARE ACTING OUTSIDE YOUR AUTHORITY, DO NOT PROCEED ANY FURTHER. IF YOU ARE ACTING WITHIN YOUR AUTHORITY, PLEASE NOTE THAT YOUR USE OF THIS SYSTEM MAY BE MONITORED FOR OPERATIONAL OR BUSINESS REASONS.\n******************************************************************************** ! EOF ! banner motd ! ********************************************************************************\nYOU ARE CONNECTED TO PRIVATE DEVICE PLEASE ENSURE YOU ARE ACTING WITHIN YOUR AUTHORITY ACCESS TO THE CLI SHOULD BE USED FOR TROUBLESHOOTING AND SERIOUS INCIDENTS ONLY CONFIGURATION MUST BE APPLIED USING AUTHORISED TOOLS ONLY.\nTHIS DEVICE IS CONFIGURED AND MONITORED BY CLOUDVISION PORTAL. CHANGES MADE ON THE CLI WILL BE OVERWRITTEN IF NOT APPLIED TO CVP\n******************************************************************************** ! EOF !"
+   last_changed: 1578924679973
+   devices: []
+   containers: ['CTL1_TempTest']
+'shared_Test':
+   config: "! Test Configlet"
+   last_changed: 1578664948405
+   devices: []
+   containers: ['CTL1_TempTest']
+'shared_cvpserver-1':
+   config: "! This was created on cvp_server-1"
+   last_changed: 1579015922803
+   devices: []
+   containers: []
+'shared_cvpserver-2':
+   config: "! This was created on cvp_server-2\n! This was updated on cvp_server-1\n! this was updated again."
+   last_changed: 1579022678258
+   devices: []
+   containers: []
+'shared_cvpserver-3':
+   config: "! Nah there is only two servers\n! But what happens if I update it here?"
+   last_changed: 1579024500544
+   devices: []
+   containers: []

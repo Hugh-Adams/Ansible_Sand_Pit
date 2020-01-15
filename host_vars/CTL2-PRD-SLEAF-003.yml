@@ -1,0 +1,12 @@
+---
+  bgp:
+    asn: 65081.2002
+  endpoint_services:
+    - name: webservice01
+      vlan: 61
+      svi: 192.168.61.1/24
+      svi_mode: local
+      interfaces:
+        - name: Ethernet7
+          description: EndPoint_Client_B - eth0
+        

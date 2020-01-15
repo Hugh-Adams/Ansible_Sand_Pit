@@ -1,0 +1,60 @@
+---
+- name: Build Device Configlets
+  hosts: leafs_1,leafs_2
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: generate intented configlet
+      tags:
+        - build
+        - provision
+      import_role:
+         name: device_configlets.build
+
+- name: Provision CVP
+  hosts: cvp_servers
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: provision CVP server
+      tags:
+        - build
+        - provision
+      import_role:
+         name: cvp.provision
+
+- name: Provision Endpoints
+  hosts: servers
+  gather_facts: no
+  # pre_tasks:
+  #   - name: 'install python'
+  #     raw: sudo apt-get -y install python python-apt
+  tasks:
+    - name: provision web server
+      tags:
+        - deploy
+        - cleanup
+      import_role:
+         name: endpoints.server
+
+- name: Check Shared Configlets across CVP clusters
+  hosts: cvp_servers
+  serial: true
+  gather_facts: no
+  tasks:
+    - name: Sync Shared Configlets
+      tags:
+        - check
+        - sync
+      import_role:
+         name: cvp.sync
+
+- name: Update Shared Configlets across CVP clusters
+  hosts: cvp_servers
+  gather_facts: no
+  tasks:
+    - name: Sync Shared Configlets
+      tags:
+        - sync
+      import_role:
+         name: cvp.refresh

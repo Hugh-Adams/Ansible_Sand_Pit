@@ -1,0 +1,47 @@
+{% if endpoint_services is defined %}
+! Configured from template.ep.j2 for {{inventory_hostname}}
+!
+! VLANs and SVIs
+!
+{% for service in endpoint_services %}
+vlan {{service.vlan}}
+   name {{service.name}}
+!
+{%  if service.svi is defined %}
+interface vlan{{service.vlan}}
+   description svi for {{service.name}}
+{%    if service.svi_mode == 'local' %}
+   ip address {{service.svi}}
+{%    elif service.svi_mode == 'virtual' %}
+   ip virtual-router address {{service.svi}}
+   ip address {{service.svi_local}}
+{%    endif %}
+   ip helper-address 192.168.30.101 
+   no shutdown
+exit
+!
+{%  endif %}
+{% endfor %}
+! Ethernet Interfaces
+!
+{% for service in endpoint_services %}
+{%      if service.interfaces is defined %}
+{%          for interface in service.interfaces %}
+interface {{ interface.name }}
+  description {{ interface.description | default('unset description')}}
+  switchport mode access
+  switchport access vlan {{ service.vlan }}
+{# spanning-tree portfast
+service-profile QoS_UNTRUST #}
+  no shutdown
+exit
+!
+{%          endfor %}
+{%      endif %}
+{% endfor %}
+router bgp {{bgp.asn}}
+{% for service in endpoint_services %}
+  network {{service.svi| ipaddr('subnet')}}
+{% endfor %}
+exit
+{% endif %}

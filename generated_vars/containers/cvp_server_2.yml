@@ -1,0 +1,14 @@
+---
+TOPOLOGY:
+   CTL2_TempTest:
+      parent_container: Arista_CTL2
+      configlets:
+         - shared_Test
+         - shared_LoginBanner
+         - Static_Demo_LocalUserPolicy
+
+TOPOLOGY_ROLLBACK:
+   CTL2_TempTest:
+      parent_container: Arista_CTL2
+      configlets:
+         - Static_Demo_LocalUserPolicy

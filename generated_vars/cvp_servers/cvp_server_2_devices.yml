@@ -1,0 +1,84 @@
+---
+CVP_DEVICES:
+  'CTL2-PRD-SLEAF-001':
+    name: CTL2-PRD-SLEAF-001
+    configlets:
+      - 'CTL2-PRD-SLEAF-001_base-sw'
+      - 'CTL2-PRD-SLEAF-001_nw'
+      - 'CTL2-PRD-SLEAF-001_ep_INNOVATE'
+  'CTL2-PRD-SLEAF-002':
+    name: CTL2-PRD-SLEAF-002
+    configlets:
+      - 'CTL2-PRD-SLEAF-002_base-sw'
+      - 'CTL2-PRD-SLEAF-002_nw'
+      - 'CTL2-PRD-SLEAF-002_ep_INNOVATE'
+  'CTL2-PRD-SLEAF-003':
+    name: CTL2-PRD-SLEAF-003
+    configlets:
+      - 'CTL2-PRD-SLEAF-003_base-sw'
+      - 'CTL2-PRD-SLEAF-003_nw'
+      - 'CTL2-PRD-SLEAF-003_ep_INNOVATE'
+  'CTL2-PRD-SLEAF-004':
+    name: CTL2-PRD-SLEAF-004
+    configlets:
+      - 'CTL2-PRD-SLEAF-004_base-sw'
+      - 'CTL2-PRD-SLEAF-004_nw'
+      - 'CTL2-PRD-SLEAF-004_ep_INNOVATE'
+  'CTL2-PRD-SLEAF-005':
+    name: CTL2-PRD-SLEAF-005
+    configlets:
+      - 'CTL2-PRD-SLEAF-005_base-sw'
+      - 'CTL2-PRD-SLEAF-005_nw'
+      - 'CTL2-PRD-SLEAF-005_ep_INNOVATE'
+  'CTL2-PRD-SLEAF-006':
+    name: CTL2-PRD-SLEAF-006
+    configlets:
+      - 'CTL2-PRD-SLEAF-006_base-sw'
+      - 'CTL2-PRD-SLEAF-006_nw'
+      - 'CTL2-PRD-SLEAF-006_ep_INNOVATE'
+
+CVP_CONFIGLET:
+  CTL2-PRD-SLEAF-001_ep_INNOVATE: "! Configured from template.ep.j2 for CTL2-PRD-SLEAF-001\n!\n! VLANs and SVIs\n!\nvlan 60\n   name WebService60\n!\ninterface vlan60\n   description svi for WebService60\n   ip address 192.168.60.1/24\n   ip helper-address 192.168.30.101 \n   no shutdown\nexit\n!\n! Ethernet Interfaces\n!\ninterface Ethernet7\n  description EndPoint_Client_A - eth0\n  switchport mode access\n  switchport access vlan 60\n  no shutdown\nexit\n!\nrouter bgp 65081.2001\n  network 192.168.60.0/24\nexit"
+  CTL2-PRD-SLEAF-002_ep_INNOVATE: ""
+  CTL2-PRD-SLEAF-003_ep_INNOVATE: "! Configured from template.ep.j2 for CTL2-PRD-SLEAF-003\n!\n! VLANs and SVIs\n!\nvlan 61\n   name webservice01\n!\ninterface vlan61\n   description svi for webservice01\n   ip address 192.168.61.1/24\n   ip helper-address 192.168.30.101 \n   no shutdown\nexit\n!\n! Ethernet Interfaces\n!\ninterface Ethernet7\n  description EndPoint_Client_B - eth0\n  switchport mode access\n  switchport access vlan 61\n  no shutdown\nexit\n!\nrouter bgp 65081.2002\n  network 192.168.61.0/24\nexit"
+  CTL2-PRD-SLEAF-004_ep_INNOVATE: "! Configured from template.ep.j2 for CTL2-PRD-SLEAF-004\n!\n! VLANs and SVIs\n!\nvlan 62\n   name webservice01\n!\ninterface vlan62\n   description svi for webservice01\n   ip address 192.168.62.1/24\n   ip helper-address 192.168.30.101 \n   no shutdown\nexit\n!\n! Ethernet Interfaces\n!\ninterface Ethernet7\n  description EndPoint_Client_C - eth0\n  switchport mode access\n  switchport access vlan 62\n  no shutdown\nexit\n!\nrouter bgp 65081.2002\n  network 192.168.62.0/24\nexit"
+  CTL2-PRD-SLEAF-005_ep_INNOVATE: "! Configured from template.ep.j2 for CTL2-PRD-SLEAF-005\n!\n! VLANs and SVIs\n!\nvlan 63\n   name webservice01\n!\ninterface vlan63\n   description svi for webservice01\n   ip virtual-router address 192.168.63.1/24\n   ip address 192.168.63.2/24\n   ip helper-address 192.168.30.101 \n   no shutdown\nexit\n!\n! Ethernet Interfaces\n!\ninterface Ethernet7\n  description EndPoint_Client_Z - eth0\n  switchport mode access\n  switchport access vlan 63\n  no shutdown\nexit\n!\nrouter bgp 65081.2003\n  network 192.168.63.0/24\nexit"
+  CTL2-PRD-SLEAF-006_ep_INNOVATE: "! Configured from template.ep.j2 for CTL2-PRD-SLEAF-006\n!\n! VLANs and SVIs\n!\nvlan 63\n   name webservice01\n!\ninterface vlan63\n   description svi for webservice01\n   ip virtual-router address 192.168.63.1/24\n   ip address 192.168.63.3/24\n   ip helper-address 192.168.30.101 \n   no shutdown\nexit\n!\n! Ethernet Interfaces\n!\ninterface Ethernet7\n  description EndPoint_Client_Z - eth0\n  switchport mode access\n  switchport access vlan 63\n  no shutdown\nexit\n!\nrouter bgp 65081.2003\n  network 192.168.63.0/24\nexit"
+
+CVP_DEVICES_ROLLBACK:
+  'CTL2-PRD-SLEAF-001':
+    name: CTL2-PRD-SLEAF-001
+    configlets:
+      - 'CTL2-PRD-SLEAF-001_base-sw'
+      - 'CTL2-PRD-SLEAF-001_nw'
+      - 'CTL2-PRD-SLEAF-001_ep'
+  'CTL2-PRD-SLEAF-002':
+    name: CTL2-PRD-SLEAF-002
+    configlets:
+      - 'CTL2-PRD-SLEAF-002_base-sw'
+      - 'CTL2-PRD-SLEAF-002_nw'
+      - 'CTL2-PRD-SLEAF-002_ep'
+  'CTL2-PRD-SLEAF-003':
+    name: CTL2-PRD-SLEAF-003
+    configlets:
+      - 'CTL2-PRD-SLEAF-003_base-sw'
+      - 'CTL2-PRD-SLEAF-003_nw'
+      - 'CTL2-PRD-SLEAF-003_ep'
+  'CTL2-PRD-SLEAF-004':
+    name: CTL2-PRD-SLEAF-004
+    configlets:
+      - 'CTL2-PRD-SLEAF-004_base-sw'
+      - 'CTL2-PRD-SLEAF-004_nw'
+      - 'CTL2-PRD-SLEAF-004_ep'
+  'CTL2-PRD-SLEAF-005':
+    name: CTL2-PRD-SLEAF-005
+    configlets:
+      - 'CTL2-PRD-SLEAF-005_base-sw'
+      - 'CTL2-PRD-SLEAF-005_nw'
+      - 'CTL2-PRD-SLEAF-005_ep'
+  'CTL2-PRD-SLEAF-006':
+    name: CTL2-PRD-SLEAF-006
+    configlets:
+      - 'CTL2-PRD-SLEAF-006_base-sw'
+      - 'CTL2-PRD-SLEAF-006_nw'
+      - 'CTL2-PRD-SLEAF-006_ep'

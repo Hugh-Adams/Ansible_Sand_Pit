@@ -1,0 +1,93 @@
+---
+# tasks file for endpoints.server
+- name: Update and upgrade apt packages
+  tags:
+    - deploy
+    - server
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
+  become: yes
+
+- name: ensure nginx is at the latest version
+  tags:
+    - deploy
+  apt: name=nginx state=latest
+  become: yes
+
+- name: start nginx
+  tags:
+    - deploy
+    - server
+  service:
+      name: nginx
+      state: started
+  become: yes
+
+- name: copy the nginx config file and restart nginx
+  tags:
+    - deploy
+    - server
+  copy:
+    src: static_site.cfg
+    dest: /etc/nginx/sites-available/static_site.cfg
+  become: yes
+
+- name: create symlink
+  tags:
+    - deploy
+    - server
+  file:
+    src: /etc/nginx/sites-available/static_site.cfg
+    dest: /etc/nginx/sites-enabled/default
+    state: link
+  become: yes
+
+- name: copy the content of the web site
+  tags:
+    - deploy
+    - server
+  copy:
+    src: web_content/
+    dest: /home/labadmin/static-site
+
+- name: restart nginx
+  tags:
+    - deploy
+    - server
+  service:
+    name: nginx
+    state: restarted
+  become: yes
+
+- name: stop nginx
+  tags:
+    - cleanup
+    - cleanup-server
+    - never
+  service:
+      name: nginx
+      state: stopped
+  become: yes
+
+- name: Ansible delete file example
+  tags:
+    - cleanup
+    - cleanup-server
+    - never
+  file:
+    path: '{{item}}'
+    state: absent
+  with_items:
+    - /etc/nginx/sites-available/static_site.cfg
+    - /etc/nginx/sites-enabled/default
+    - /home/labadmin/static-site/index.html
+  become: yes
+
+- name: ensure nginx is not installed
+  tags:
+    - cleanup
+    - cleanup-server
+    - never
+  apt: name=nginx state=absent
+  become: yes

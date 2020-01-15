@@ -1,0 +1,27 @@
+! Configured from template.ep.j2 for CTL2-PRD-SLEAF-005
+!
+! VLANs and SVIs
+!
+vlan 63
+   name webservice01
+!
+interface vlan63
+   description svi for webservice01
+   ip virtual-router address 192.168.63.1/24
+   ip address 192.168.63.2/24
+   ip helper-address 192.168.30.101 
+   no shutdown
+exit
+!
+! Ethernet Interfaces
+!
+interface Ethernet7
+  description EndPoint_Client_Z - eth0
+  switchport mode access
+  switchport access vlan 63
+  no shutdown
+exit
+!
+router bgp 65081.2003
+  network 192.168.63.0/24
+exit

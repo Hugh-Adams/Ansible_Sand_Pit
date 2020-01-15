@@ -1,0 +1,26 @@
+! Configured from template.ep.j2 for CTL2-PRD-SLEAF-001
+!
+! VLANs and SVIs
+!
+vlan 60
+   name WebService60
+!
+interface vlan60
+   description svi for WebService60
+   ip address 192.168.60.1/24
+   ip helper-address 192.168.30.101 
+   no shutdown
+exit
+!
+! Ethernet Interfaces
+!
+interface Ethernet7
+  description EndPoint_Client_A - eth0
+  switchport mode access
+  switchport access vlan 60
+  no shutdown
+exit
+!
+router bgp 65081.2001
+  network 192.168.60.0/24
+exit

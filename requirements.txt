@@ -1,0 +1,5 @@
+ansible==2.9.0
+netaddr
+requests
+fuzzywuzzy
+treelib
