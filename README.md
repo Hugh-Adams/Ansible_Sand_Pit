@@ -1,4 +1,4 @@
-# Repository to run Innovate 2019 demo
+# Repository to run Ansible Sand Pit Demos
 
 ## Todo
 
@@ -7,7 +7,9 @@
 
 ## About
 
-Repository provides material to build and run demo of __ansible-cvp__ collection during INNOVATE 2019.
+Repository provides material to build and run demos of __ansible-cvp__ collection
+The Original scripts were used during Innovate 2019, these have since been expanded
+and added to.
 
 ## Demo runbook
 
@@ -18,12 +20,12 @@ Playbook implement multiple tags to allow a step by step approach:
 $ ansible-playbook playbook.demo.yml --tags build
 ```
 
-- _Provision configlet on CVP_:
+- _Provision Configlet on CVP_:
 ```shell
 $ ansible-playbook playbook.demo.yml --tags provision
 ```
 
-- _Attach configlet to devices & configure web-server_:
+- _Attach Configlet to devices & configure web-server_:
 ```shell
 $ ansible-playbook playbook.demo.yml --tags deploy
 ```
@@ -35,7 +37,7 @@ labadmin@ctl1-endpoint-z:~$ curl http://127.0.0.1/
 <h1>Welcome to Ansible</h1>
 ```
 
-- _Remove attachement from devices & remove HTTP configuration from server_:
+- _Remove attachment from devices & remove HTTP configuration from server_:
 ```shell
 $ ansible-playbook playbook.demo.yml --tags cleanup
 ```
@@ -59,7 +61,17 @@ labadmin@ctl1-endpoint-z:~$ curl http://127.0.0.1/
 ansible-playbook playbook.demo.yml --tags cleanup-server
 ```
 
+- _Check Shared Configlets for updates_:
 
+```shell
+ansible-playbook playbook.demo.yml --tags check
+```
+
+- _Sync Shared Configlets between CVP clusters_:
+
+```shell
+ansible-playbook playbook.demo.yml --tags sync
+```
 ## Installation
 
 1. Configure Virtual environment with Python 2.7
@@ -81,7 +93,7 @@ $ pip install -r requirements.txt
 $ ansible-galaxy collection install arista-cvp-1.0.0.tar.gz -p collections
 ```
 
-For Endpoint provisionning, SSHPASS is required to support SSH connection with Password and not public key.
+For Endpoint provisioning, SSHPASS is required to support SSH connection with Password and not public key.
 
 - Ubuntu installation:
 
@@ -103,7 +115,8 @@ Update inventory to fit with topology:
 
 ```ini
 [cvp_servers]
-cvp_innovate    ansible_httpapi_host=10.83.28.164
+cvp_server_1    ansible_httpapi_host=10.83.30.100
+cvp_server_2    ansible_httpapi_host=10.83.30.102
 
 [cvp_servers:vars]
 ansible_user = 'ansible'
@@ -146,10 +159,17 @@ __Playbook:__
 
 __Roles:__
 
-- `configlets.build`: Manage template rendering for configlets
-- `cvp.provision`: Manage CVP provisionning with 2 different actions: build CVP data structure locally and execute action to build CVP topology.
+- `cvp.provision`: Manage CVP provisioning with 2 different actions: build CVP data structure locally and execute action to build CVP topology.
+- `cvp.refresh`: Attach to CVP instances and using shared Configlet data apply latest Configlets to each instance.
+- `cvp.sync`: Attach to CVP instances and update 'shared' Configlet data (config, last time changed, containers, devices).
+- `device_configlets.build`: Manage template rendering for configlets
 - `endpoints.server`: Role to configure NGINX webserver on Ubuntu machine with a very basic landing page
 
-__Host vars__
+__host_vars__
 
-Host_vars are only implemented for leafs to define services.
+host_vars contains YAML files for each LEAF switch to describe attached devices and services.
+
+__generated_vars__
+
+generated_vars contains YAML files that are created by the PlayBook roles to store information about
+various aspects of the provisioning hierarchy in CVP
