@@ -3,38 +3,41 @@
 ## iPerf
 
 __server__
-'''shell
+
+```shell
 iperf -s
-'''
+```
 
 __client__
-'''shell
+
+```shell
 iperf -c 192.168.53.10 -i 10 -d -P 5 -t 60
-'''
+```
 
 ## SNMP Setup on Ubuntu Clients
 
-'''shell
+```shell
 sudo apt-get install snmp snmpd
 
 sudo vi /etc/snmp/snmp.conf
-'''
+```
 replace "mibs" with "mibs +All"
-'''shell
+```shell
 sudo apt-get install snmp-mibs-downloader
 sudo download-mibs
 
 sudo cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.old
 
 sudo vi /etc/snmp/snmpd.conf
-'''
+```
 __VI commands__
+```
 gg
 dG
-
+```
 then insert the following
 
-'''
+```
  agentAddress udp:161,udp6:[::1]:161
  view   systemonly  included   .1.3.6.1.2.1.1
  view   systemonly  included   .1.3.6.1.2.1.25.1
@@ -85,7 +88,8 @@ then insert the following
 #
 #  Run as an AgentX master agent
  master          agentx
-'''
-'''shell
+```
+__Start SMP Service__
+```shell
 sudo service snmpd restart
-'''
+```
