@@ -18,6 +18,33 @@
   delegate_to: localhost
   run_once: False
 
+- name: "Check for shared_master"
+  tags:
+     - sync
+     - check
+  stat: path=./generated_vars/common_configlets/master.yml
+  register: status_shared_master
+  delegate_to: localhost
+
+- name: "Create common_configlets master.yml if not exist"
+  tags:
+    - sync
+    - check
+  file:
+     path: ./generated_vars/common_configlets/master.yml
+     state: touch
+     mode: u=rw,g=r,o=r
+  when: status_shared_master.stat.exists == false
+  delegate_to: localhost
+
+- name: "Add YAML designators to shared_master.yml"
+  tags:
+    - sync
+    - check
+  copy: content="---" dest="./generated_vars/common_configlets/master.yml"
+  when: status_shared_master.stat.exists == false
+  delegate_to: localhost
+
 - name: "Load Common CVP Servers Configlet Data"
   tags:
     - sync

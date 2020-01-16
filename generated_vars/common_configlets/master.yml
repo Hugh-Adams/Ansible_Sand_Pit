@@ -6,13 +6,13 @@ shared_cvpserver-3:
    devices: []
    containers: []
 shared_Test:
-   source: "updated_by_common_master"
+   source: "updated_by_cvp_server_2"
    config: "! Test Configlet"
    last_changed: 1578665280995
    devices: []
    containers: ['CTL2_TempTest']
 shared_cvpserver-1:
-   source: "updated_by_common_master"
+   source: "updated_by_cvp_server_2"
    config: "! This was created on cvp_server-1"
    last_changed: 1579018042871
    devices: []
@@ -24,7 +24,7 @@ shared_LoginBanner:
    devices: []
    containers: ['CTL1_TempTest']
 shared_cvpserver-2:
-   source: "updated_by_common_master"
+   source: "updated_by_cvp_server_2"
    config: "! This was created on cvp_server-2\n! This was updated on cvp_server-1\n! this was updated again."
    last_changed: 1579023120825
    devices: []
