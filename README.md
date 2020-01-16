@@ -2,8 +2,8 @@
 
 ## Todo
 
-- Execute end-to-end runs.
-- Manage configuration on endpoints.
+- add complete container topology and update examples to add/remove/change containers
+- add Image deployment and Task execution examples.
 
 ## About
 
