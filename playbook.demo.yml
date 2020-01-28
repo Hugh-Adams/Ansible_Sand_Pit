@@ -1,4 +1,15 @@
 ---
+- name: Check CVP
+  hosts: cvp_servers
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Test CVP server
+      tags:
+        - test
+      import_role:
+         name: cvp.test
+
 - name: Build Device Configlets
   hosts: leafs_1,leafs_2
   connection: local

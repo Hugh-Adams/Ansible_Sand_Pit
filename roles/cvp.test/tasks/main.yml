@@ -1,0 +1,10 @@
+---
+# tasks file for ./roles/cvp.test
+- name: collect CVP Facts
+  tags:
+    - test
+  arista.cvp.cv_facts:
+  register: CVP_FACTS
+
+- debug:
+   msg: CVP Version- {{CVP_FACTS['ansible_facts']['cvp_info']['version']}}
