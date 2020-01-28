@@ -15,6 +15,11 @@ and added to.
 
 Playbook implement multiple tags to allow a step by step approach:
 
+- _Check CVP Connectivity_:
+```shell
+$ ansible-playbook playbook.demo.yml --tags test
+```
+
 - _Build Configlets_:
 ```shell
 $ ansible-playbook playbook.demo.yml --tags build
