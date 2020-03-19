@@ -3,11 +3,11 @@
     asn: 65080.2003
   endpoint_services:
     - name: webservice01
-      vlan: 53
-      svi: 192.168.53.1/24
+      vlan: 55
+      svi: 192.168.55.1/24
       svi_mode: virtual
-      svi_local: 192.168.53.3/24
+      svi_local: 192.168.55.3/24
       interfaces:
         - name: Ethernet7
-          description: EndPoint_Client_Z - eth0
+          description: CTL1-SRV-labtest-004-eth0
         

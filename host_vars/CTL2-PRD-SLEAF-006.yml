@@ -2,11 +2,11 @@
   bgp:
     asn: 65081.2003
   endpoint_services:
-    - name: webservice01
+    - name: ClientAccess
       vlan: 63
       svi: 192.168.63.1/24
       svi_mode: virtual
       svi_local: 192.168.63.3/24
       interfaces:
         - name: Ethernet7
-          description: EndPoint_Client_Z - eth0
+          description: CTL2-SRV-labtest-004-eth0

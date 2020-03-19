@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric project file for project CVP 2020 Ansible -->
+<!-- Saved: 2020-03-18, 18:53:20 -->
+<!-- Copyright (C) 2020 ,  -->
+<Project version="5.1">
+  <Language>en_US</Language>
+  <Hash>f7e4dad5d94022c682d084c45739aba5b40ccb0c</Hash>
+  <ProgLanguage mixed="0">Python3</ProgLanguage>
+  <ProjectType>PyQt5</ProjectType>
+  <Version>0.1</Version>
+  <Author></Author>
+  <Email></Email>
+  <Eol index="0"/>
+  <Sources>
+    <Source>plugins/__init__.py</Source>
+    <Source>plugins/module_utils/__init__.py</Source>
+    <Source>plugins/module_utils/cv_api2018.py</Source>
+    <Source>plugins/module_utils/cv_api2019.py</Source>
+    <Source>plugins/module_utils/cv_api2020.py</Source>
+    <Source>plugins/module_utils/cv_client.py</Source>
+    <Source>plugins/module_utils/cv_client_errors.py</Source>
+    <Source>plugins/modules/cv_configlet.py</Source>
+    <Source>plugins/modules/cv_container.py</Source>
+    <Source>plugins/modules/cv_device.py</Source>
+    <Source>plugins/modules/cv_facts.py</Source>
+    <Source>plugins/modules/cv_facts_v1.py</Source>
+    <Source>plugins/modules/cv_task.py</Source>
+    <Source>tests/cv-ansible_ContainerTest.py</Source>
+    <Source>tests/cv-ansible_DeviceTest.py</Source>
+    <Source>tests/cv-ansible_ImageTest.py</Source>
+    <Source>tests/cv-ansible_TaskTest.py</Source>
+  </Sources>
+  <Others>
+    <Other>CVP 2020 Ansible.e4p</Other>
+    <Other>README.md</Other>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.e4p" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.md" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.proto" type="PROTOCOLS"/>
+    <FiletypeAssociation pattern="*.py" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw3" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES"/>
+    <FiletypeAssociation pattern="*.rst" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.txt" type="OTHERS"/>
+    <FiletypeAssociation pattern="*.ui" type="FORMS"/>
+    <FiletypeAssociation pattern="GNUmakefile" type="OTHERS"/>
+    <FiletypeAssociation pattern="Makefile" type="OTHERS"/>
+    <FiletypeAssociation pattern="README" type="OTHERS"/>
+    <FiletypeAssociation pattern="README.*" type="OTHERS"/>
+    <FiletypeAssociation pattern="makefile" type="OTHERS"/>
+  </FiletypeAssociations>
+</Project>
