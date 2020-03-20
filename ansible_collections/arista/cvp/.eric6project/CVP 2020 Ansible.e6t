@@ -1,105 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
 <!-- eric6 tasks file for project CVP 2020 Ansible -->
-<!-- Saved: 2020-03-19, 10:32:00 -->
+<!-- Saved: 2020-03-19, 18:33:14 -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="0" uid="{2157d161-3bf9-4d04-a590-2863ead4b3bb}">
+  <Task priority="1" completed="False" type="0" uid="{b481b1ee-d8a5-4a62-a04b-81be0440287e}">
     <Summary>FIXME: required to pass ansible-test</Summary>
     <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/module_utils/cv_api2018.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{1b6037df-198a-40a0-9cb9-d294b823cb32}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/module_utils/cv_api2019.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{6f135c41-c5cd-4fbf-b14f-d78e08db4feb}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/module_utils/cv_client.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{e28b374e-f67a-4f26-b110-7759ec1c9ced}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/module_utils/cv_client_errors.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{22fc36db-5cf2-4729-9b4d-9c32b3594b8b}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/modules/cv_configlet.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{20baae56-fa40-4ae4-9ed5-646885e468ea}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/modules/cv_device.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{d6fcf4c3-329a-4bed-b027-a585fa656a4c}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/modules/cv_facts.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{6bb2d301-c142-4ba5-994d-29246c86fdda}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/modules/cv_facts_v1.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{8c485e49-2fa9-433c-a5ad-a98580a25f42}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:23:35</Created>
-    <Resource>
-      <Filename>plugins/modules/cv_task.py</Filename>
-      <Linenumber>4</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="0" uid="{99b173e0-f271-42c8-b9b7-b15a39e1eee2}">
-    <Summary>FIXME: required to pass ansible-test</Summary>
-    <Description></Description>
-    <Created>2020-03-19, 10:26:17</Created>
+    <Created>2020-03-19, 17:14:07</Created>
     <Resource>
       <Filename>plugins/modules/cv_container.py</Filename>
       <Linenumber>5</Linenumber>
     </Resource>
   </Task>
-  <Task priority="1" completed="False" type="0" uid="{93e5f456-6546-4843-b620-47daecd3b254}">
+  <Task priority="1" completed="False" type="0" uid="{4dcf2e6d-b23a-48ba-a03f-e18abf6fe19a}">
     <Summary>FIXME: required to pass ansible-test</Summary>
     <Description></Description>
-    <Created>2020-03-19, 10:31:58</Created>
+    <Created>2020-03-19, 17:14:07</Created>
     <Resource>
       <Filename>plugins/module_utils/cv_api2020.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{3b9df6d5-6dab-43cd-8f1d-88c446f32496}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/module_utils/cv_api2018.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{7424f2ac-9827-4f87-b619-2602f67d6c8c}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/module_utils/cv_api2019.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{97647552-afbb-40ea-91ea-0f3a10e31f5f}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/module_utils/cv_api2020.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{42c28f34-807d-48f9-8d5c-4b405d942791}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/module_utils/cv_client.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{ad5e0e80-1e31-42bc-b125-25acad8e8595}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/module_utils/cv_client_errors.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{86df3c77-fad0-4bad-b7af-53f2258b4a4d}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/modules/cv_configlet.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{f82d5fad-2b71-4ba2-a012-7548316f83b3}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/modules/cv_container.py</Filename>
+      <Linenumber>5</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{e8f2efc6-14c5-4e13-af63-6a7e064ea8ff}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/modules/cv_device.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{0ed156ff-e172-4582-ae14-c3ef5f12101c}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/modules/cv_facts.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{0abc626f-8ebe-4cd0-8400-d3d85a64b7c0}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/modules/cv_facts_v1.py</Filename>
+      <Linenumber>4</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{cd8899b5-192f-4cd8-b1e8-210ff007e636}">
+    <Summary>FIXME: required to pass ansible-test</Summary>
+    <Description></Description>
+    <Created>2020-03-19, 17:14:07</Created>
+    <Resource>
+      <Filename>plugins/modules/cv_task.py</Filename>
       <Linenumber>4</Linenumber>
     </Resource>
   </Task>

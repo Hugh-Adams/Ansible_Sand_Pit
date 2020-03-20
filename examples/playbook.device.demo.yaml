@@ -15,13 +15,13 @@
         name: CTL1-EXT-PRDSW-001
         configlets:
           - ansible_device_test01
-          - CTL1-EXT-PRDSW-001_base-sw
+          - CTL1-EXT-PRDSW-001_base-ansible
     # Device inventory for rollback activity: unbind configlet
     devices_inventory_rollback:
       veos01:
         name: CTL1-EXT-PRDSW-001
         configlets:
-          - CTL1-EXT-PRDSW-001_base-sw
+          - CTL1-EXT-PRDSW-001_base-ansible
           - veos01-basic-configuration
 
   tasks:

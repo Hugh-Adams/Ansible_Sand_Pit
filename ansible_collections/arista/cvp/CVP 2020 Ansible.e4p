@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project CVP 2020 Ansible -->
-<!-- Saved: 2020-03-18, 18:53:20 -->
+<!-- Saved: 2020-03-19, 18:33:14 -->
 <!-- Copyright (C) 2020 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -26,10 +26,6 @@
     <Source>plugins/modules/cv_facts.py</Source>
     <Source>plugins/modules/cv_facts_v1.py</Source>
     <Source>plugins/modules/cv_task.py</Source>
-    <Source>tests/cv-ansible_ContainerTest.py</Source>
-    <Source>tests/cv-ansible_DeviceTest.py</Source>
-    <Source>tests/cv-ansible_ImageTest.py</Source>
-    <Source>tests/cv-ansible_TaskTest.py</Source>
   </Sources>
   <Others>
     <Other>CVP 2020 Ansible.e4p</Other>

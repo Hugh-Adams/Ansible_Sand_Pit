@@ -1,5 +1,6 @@
 ---
 - name: Playbook to validate and demonstrate cv_container module.
+  debugger: on_failed
   hosts: cvp_servers
   connection: local
   gather_facts: no
@@ -17,32 +18,36 @@
 
     containers_provision:
       CTL1_TempTest:
-          parent_container: Arista_CTL1
+         parent_container: Arista_CTL1
       Fabric:
-       parent_container: CTL1_TempTest
+         parent_container: CTL1_TempTest
       Spines:
-       parent_container: Fabric
+         parent_container: Fabric
       Leaves:
-       parent_container: Fabric
-       configlets:
-           - alias
-       devices:
-         - CTL1-EXT-PRDSW-001
+         parent_container: Fabric
+         configlets:
+            - ansible_Configlet_1
+         devices:
+            - CTL1-EXT-PRDSW-001
 
       ROOM02:
-       parent_container: CTL1_TempTest
+         parent_container: CTL1_TempTest
       ROOM02_Spines:
-       parent_container: ROOM02
+         parent_container: ROOM02
+         configlets:
+            - ansible_Configlet_2
       ROOM02_Leaves:
-       parent_container: ROOM02
+         parent_container: ROOM02
 
     container_delete:
+      CTL1_TempTest:
+         parent_container: Arista_CTL1
       ROOM02:
-        parent_container: CTL1_TempTest
+         parent_container: CTL1_TempTest
       ROOM02_Spines:
-        parent_container: ROOM02
+         parent_container: ROOM02
       ROOM02_Leaves:
-        parent_container: ROOM02
+         parent_container: ROOM02
 
   tasks:
     - name: "Gather CVP facts from {{inventory_hostname}}"
