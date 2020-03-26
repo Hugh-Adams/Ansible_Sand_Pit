@@ -7,12 +7,12 @@
     - arista.cvp
   vars:
     configlet_list:
-      ansible_Configlet: "! This is a Very First Testing Configlet\n! it has no affect on the Device \n!\ninterface loopback 999\n  description Test Interface_1\n  ip address 192.168.99.99/32\n  no shutdown\nexit"
+      ansible_Test_Configlet: "! This is a Very First Testing Configlet\n! it has no affect on the Device \n!\ninterface loopback 999\n  description Test Interface_1\n  ip address 192.168.99.99/32\n  no shutdown\nexit"
       # New_Configlet_2: "! This is a Testing Configlet\n! it has no affect on the Device\n!\ninterface loopback 998\n  description Test Interface_2\n  ip address 192.168.99.98/32\n  no shutdown\nexit"
-      ansible_DYNAMIC_Configlet: "{{ lookup('file', 'templates/ansible_Configlet_'+inventory_hostname+'.txt') }}"
+      ansible_Test_DYNAMIC_Configlet: "{{ lookup('file', 'templates/ansible_Configlet_'+inventory_hostname+'.txt') }}"
 
     change_configlet_list:
-      ansible_Configlet: "! This is a Very First Testing Configlet\n! it has no affect on the Device but has been changed again\n!\ninterface loopback 999\n  description Test Interface_1.1\n  ip address 192.168.99.98/32\n  no shutdown\nexit"
+      ansible_Test_Configlet: "! This is a Very First Testing Configlet\n! it has no affect on the Device but has been changed again\n!\ninterface loopback 999\n  description Test Interface_1.1\n  ip address 192.168.99.98/32\n  no shutdown\nexit"
       # New_Configlet_2: "! This is a Testing Configlet\n! it has no affect on the Device\n!\ninterface loopback 998\n  description Test Interface_2\n  ip address 192.168.99.98/32\n  no shutdown\nexit"
 
   tasks:

@@ -19,7 +19,7 @@
       cv_configlet:
         cvp_facts: "{{cvp_facts.ansible_facts}}"
         configlets: "{{configlet_list}}"
-        configlet_filter: ["all"]
+        configlet_filter: ["ansible"]
       register: cvp_configlets
       vars:
         configlet_list:
@@ -51,7 +51,7 @@
       cv_configlet:
         cvp_facts: "{{cvp_facts.ansible_facts}}"
         configlets: "{{configlet_list}}"
-        configlet_filter: ["all"]
+        configlet_filter: ["ansible"]
       register: cvp_configlets
       vars:
         configlet_list:
@@ -84,7 +84,7 @@
       cv_configlet:
         cvp_facts: "{{cvp_facts.ansible_facts}}"
         configlets: "{{configlet_list}}"
-        configlet_filter: ["all"]
+        configlet_filter: ["ansible"]
       notify:
         - update cvp facts
       vars:

@@ -6,13 +6,15 @@
   collections:
     - arista.cvp
   vars:
-    - verbose: True
+    - verbose: False
     - cloudvision_topology:
         configlets:
           - configletName: ansible_Configlet_test01
             data: "{{playbook_dir}}/templates/configlet1.txt"
           - configletName: ansible_Configlet_test02
             data: "{{playbook_dir}}/templates/configlet2.txt"
+        devices:
+          - CTL1-PRD-SLEAF-001
   tasks:
     - name: "Gather CVP facts {{inventory_hostname}}"
       cv_facts:
@@ -57,16 +59,21 @@
           - "{{ cv_facts.ansible_facts['configlets'] | length }} >0"
         fail_msg: "Facts from CVP do not return any configlets. (>=1 are expected)"
         success_msg: "Facts from CVP return more than 1 configlets as expected"
+    
+    - name: "Gather running Configs for Devices"
+      cv_facts:
+        gather_subset: 
+          config
+        facts:
+          devices
+      register: cv_facts_config
 
-      # Disable as long as there is no trigger to select correct configlet based on CVP version.
-    # - name: "Check if SYS_TelemetryBuilderV2 configlet exists"
-    #   assert:
-    #     that:
-    #       - "cv_facts.ansible_facts['configlets'] | selectattr(search_key,'equalto',search_val_foster) | list | count > 0"
-    #       - "cv_facts.ansible_facts['configlets'] | selectattr(search_key,'equalto',search_val_grant) | list | count > 0"
-    #     fail_msg: "SYS_TelemetryBuilderV2 has not been found in facts"
-    #     success_msg: "SYS_TelemetryBuilderV2 has been found as expected"
-    #   vars:
-    #     search_key: name
-    #     search_val_foster: SYS_TelemetryBuilderV2
-    #     search_val_grant: SYS_TelemetryBuilderV3
+    - name: "Check for Running Config from in Device Data"
+      assert:
+        that:
+          - "{{item.config | length }} >0"
+        fail_msg: "Running Config for {{item.hostname}}: NOT FOUND"
+        success_msg: "Running Config for {{item.hostname}}: FOUND"
+      with_items:
+        - "{{cv_facts_config.ansible_facts['devices']}}"
+      #when: item.hostname in cloudvision_topology.devices
